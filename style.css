@@ -1,0 +1,174 @@
+/* =====================
+   RESET Y BASE
+   ===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --very-dark-gray: hsl(0, 0%, 17%);
+    --dark-gray: hsl(0, 0%, 59%);
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    font-size: 18px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* =====================
+   CABECERA
+   ===================== */
+.header {
+    background-image: url('images/pattern-bg-desktop.png');
+    background-size: cover;
+    background-position: center;
+    padding: 2rem 1.5rem 10rem;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.header__title {
+    color: white;
+    font-size: 1.75rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+}
+
+/* =====================
+   BUSCADOR
+   ===================== */
+.search {
+    display: flex;
+    max-width: 550px;
+    margin: 0 auto;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.search__input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 1.25rem 1.5rem;
+    font-size: 1rem;
+    font-family: inherit;
+    color: var(--very-dark-gray);
+    cursor: pointer;
+}
+
+.search__input::placeholder {
+    color: var(--dark-gray);
+}
+
+.search__button {
+    background-color: black;
+    border: none;
+    padding: 1.25rem 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search__button:hover {
+    background-color: var(--very-dark-gray);
+}
+
+.search__button img {
+    display: block;
+}
+
+/* =====================
+   TARJETA DE DATOS
+   ===================== */
+.card {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin: -7rem 1.5rem 0;
+    position: relative;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    max-width: 1100px;
+}
+
+.card__item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.card__label {
+    font-size: 0.625rem;
+    letter-spacing: 1.5px;
+    color: var(--dark-gray);
+    font-weight: 700;
+}
+
+.card__value {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--very-dark-gray);
+    word-break: break-word;
+}
+
+/* =====================
+   MAPA
+   ===================== */
+#map {
+    flex: 1;
+    min-height: 400px;
+    z-index: 1;
+}
+
+/* =====================
+   ATRIBUCIÓN
+   ===================== */
+.attribution {
+    font-size: 0.6875rem;
+    text-align: center;
+    padding: 1rem;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+/* =====================
+   RESPONSIVE (ESCRITORIO)
+   ===================== */
+@media (min-width: 768px) {
+    .header__title {
+        font-size: 2rem;
+    }
+
+    .card {
+        flex-direction: row;
+        justify-content: space-between;
+        margin: -5rem auto 0;
+        padding: 2rem;
+        gap: 2rem;
+        text-align: left;
+    }
+
+    .card__item {
+        flex: 1;
+        border-right: 1px solid hsl(0, 0%, 90%);
+        padding-right: 2rem;
+    }
+
+    .card__item:last-child {
+        border-right: none;
+        padding-right: 0;
+    }
+}
